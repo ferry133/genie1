@@ -18,8 +18,8 @@ spec:
     driver: nfs.csi.k8s.io
     # volumeHandle format: {nfs-server-address}#{sub-dir-name}#{share-name}
     # make sure this value is unique for every share in the cluster
-    volumeHandle: 10.9.1.12#homebridge#/volume2/homedirect  # nfs-server.default.svc.cluster.local/share##
+    volumeHandle: ds2#homebridge#homedirect  # nfs-server.default.svc.cluster.local/share##
     volumeAttributes:
-      server: nfs-server.default.svc.cluster.local
-      share: /
+      server: 10.9.1.12
+      share: /volume2/homedirect
 
