@@ -16,11 +16,15 @@ kubectl get pvc nfs-pvc
 # helm install homebridge --set env.TZ="asia/taipei" --set persistence.config.mountPath="/nfs" --set persistence.config.subPath="/homebridge" --set persistence.config.nameOverride="/homebridge" k8s-at-home/homebridge
 helm install homebridge \
     --set image.tag=latest \
-    --set env.TZ="asia/taipei" \
+    --set env.TZ="Asia/Taipei" \
+    --set hostNetwork=true \
     --set persistence.config.enabled=true \
-    --set persistence.config.mountPath="nfs" \
+    --set persistence.config.storageClass="-" \
+    --set persistence.config.existingClaim="nfs" \
+    --set persistence.config.subPath="homebridge_cfg" \
     k8s-at-home/homebridge
 
+#    --set persistence.config.mountPath="/homebridge" \
 #    --set persistence.config.nameOverride="/homebridge" \
 
 ## Pods
