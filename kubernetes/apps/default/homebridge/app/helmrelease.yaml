@@ -25,4 +25,24 @@ spec:
     persistence.config.storageClass: "-"
     persistence.config.existingClaim: "nfs"
     persistence.config.subPath: "homebridge_cfg"
+  service:
+    app:
+      ports:
+        http:
+          port: &port 8581
+  serviceMonitor:
+    app:
+      endpoints:
+        - port: http
+  route:
+    app:
+      hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
+      parentRefs:
+        - name: envoy-external
+          namespace: network
+          sectionName: https
+      rules:
+        - backendRefs:
+            - identifier: app
+              port: *port
 
