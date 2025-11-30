@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: homebridge
-      version: '5.3.2'
+      version: latest
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
@@ -25,21 +25,4 @@ spec:
     persistence.config.storageClass: "-"
     persistence.config.existingClaim: "nfs"
     persistence.config.subPath: "homebridge_cfg"
-    ingress:
-      enabled: true
-      hostname: "{{ .Release.Name }}.${SECRET_DOMAIN}"
-      annotations:
-        kubernetes.io/ingress.class: envoy-external
-        external-dns.alpha.kubernetes.io/hostname: "{{ .Release.Name }}.${SECRET_DOMAIN}"
-    route:
-      app:
-        hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
-        parentRefs:
-          - name: envoy-external
-            namespace: network
-            sectionName: https
-        rules:
-          - backendRefs:
-              - identifier: app
-                port: 80
 
