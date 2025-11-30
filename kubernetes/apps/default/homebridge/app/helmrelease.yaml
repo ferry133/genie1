@@ -14,7 +14,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
-        namespace: flux-system
+        namespace: default
       interval: 5m
   values:
     replicaCount: 1
