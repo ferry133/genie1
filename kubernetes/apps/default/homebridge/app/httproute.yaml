@@ -5,7 +5,7 @@ metadata:
   name: homebridge-httproute
 spec:
 #  hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
-  hostnames: ["hb.${SECRET_DOMAIN}"]
+  hostnames: ["hbb.${SECRET_DOMAIN}"]
   parentRefs:
     - name: envoy-external
       namespace: network
