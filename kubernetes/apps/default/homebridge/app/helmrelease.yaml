@@ -22,7 +22,7 @@ spec:
     env.TZ: "Asia/Taipei"
     hostNetwork: true
     persistence.config.enabled: true
-    persistence.config.storageClass: "-"
-    persistence.config.existingClaim: "homebridge-nfs"
+    persistence.config.storageClass: "nfs-client"
+#    persistence.config.existingClaim: "homebridge-nfs"
 #    persistence.config.subPath: "k8s_hb_mount"
 
