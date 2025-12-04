@@ -23,6 +23,6 @@ spec:
     hostNetwork: true
     persistence.config.enabled: true
     persistence.config.storageClass: "-"
-    persistence.config.existingClaim: "nfs"
-    persistence.config.subPath: "k8s_hb_mount"
+    persistence.config.existingClaim: "homebridge-nfs"
+#    persistence.config.subPath: "k8s_hb_mount"
 

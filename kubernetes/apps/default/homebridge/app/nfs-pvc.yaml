@@ -2,7 +2,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: nfs
+  name: homebridge-nfs
   namespace: storage
 spec:
   accessModes:
