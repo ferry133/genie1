@@ -20,5 +20,5 @@ spec:
     nfs.path: /volume2/homedirect
     storageClass.name: ds2-homedirect
     storageClass.provisionerName: "k8s-sigs.io/first-nfs-subdir-external-provisioner"
-    storageClass.pathPattern: ${.PVC.namespace}-${.PVC.name}
+#    storageClass.pathPattern: ${.PVC.namespace}-${.PVC.name}
 
