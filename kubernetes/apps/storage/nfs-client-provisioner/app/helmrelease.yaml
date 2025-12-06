@@ -13,7 +13,7 @@ spec:
       chart: nfs-subdir-external-provisioner
       sourceRef:
         kind: HelmRepository
-        name: nfs-provisioner
+        name: nfs_provisioner
         namespace: storage
       interval: 5m
   values:
