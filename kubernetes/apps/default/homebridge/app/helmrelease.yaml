@@ -18,8 +18,10 @@ spec:
       interval: 5m
   values:
     replicaCount: 1
-    image.tag: latest
-    env.TZ: "Asia/Taipei"
+    image:
+      tag: latest
+    env:
+      TZ: "Asia/Taipei"
     hostNetwork: true
     persistence.config.enabled: true
     persistence.config.storageClass: ds2-homedirect
