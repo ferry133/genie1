@@ -11,4 +11,4 @@ spec:
   storageClassName: ds2-homedirect
   resources:
     requests:
-      storage: 10Gi
+      storage: 15Gi
