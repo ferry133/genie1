@@ -22,7 +22,7 @@ spec:
       tag: "2022-11-14"
     env:
       TZ: "Asia/Taipei"
-    hostNetwork: true
+#    hostNetwork: true
     persistence:
       config:
         enabled: true
