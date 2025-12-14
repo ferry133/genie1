@@ -10,7 +10,7 @@ spec:
         patchesJson6902:
           - target:
               kind: Service
-#              name: old-service
+              name: old-service
             patch:
               - op: replace
                 path: /metadata/name
