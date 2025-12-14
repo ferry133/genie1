@@ -10,6 +10,6 @@ spec:
       sectionName: mqtt-tcp
   rules:
     - backendRefs:
-        - name: mqtt
+        - name: mqtt-svc
           namespace: default
           port: 1883

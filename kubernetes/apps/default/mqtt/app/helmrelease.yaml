@@ -36,4 +36,9 @@ spec:
 #        subPath: "data"
 #        storageClass: ds2-homedirect
 #        subPath: "k8s_hb_mount"
-
+    service:
+      name: mqtt-svc
+      type: ClusterIP
+      port: 1883
+      targetPort: 1883
+      protocol: TCP
