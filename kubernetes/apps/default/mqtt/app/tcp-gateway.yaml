@@ -1,0 +1,15 @@
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: tcp-gateway
+  namespace: network
+spec:
+  gatewayClassName: envoy
+  listeners:
+  - name: mqtt-tcp
+    protocol: TCP
+    port: 1883
+    allowedRoutes:
+      kinds:
+      - kind: TCPRoute

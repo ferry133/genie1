@@ -1,13 +1,13 @@
 ---
-apiVersion: gateway.networking.k8s.io/v1beta1
+apiVersion: gateway.networking.k8s.io/v1alpha2
 kind: TCPRoute
 metadata:
   name: mqtt
 spec:
   parentRefs:
-    - name: envoy-internal
+    - name: tcp-gateway
       namespace: network
-      sectionName: tcp
+      sectionName: mqtt-tcp
   rules:
     - backendRefs:
         - name: mqtt
