@@ -6,7 +6,7 @@ metadata:
 spec:
   parentRefs:
     - name: tcp-gateway
-      namespace: network
+      namespace: default
       sectionName: mqtt-tcp
   rules:
     - backendRefs:
