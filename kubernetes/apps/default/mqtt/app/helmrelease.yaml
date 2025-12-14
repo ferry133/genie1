@@ -24,11 +24,11 @@ spec:
       TZ: "Asia/Taipei"
 #    hostNetwork: true
     persistence:
-      config:
-        enabled: true
-        type: pvc
-        existingClaim: "mqtt-nfs"
-        subPath: "config"
+#      config:
+#        enabled: true
+#        type: pvc
+#        existingClaim: "mqtt-nfs"
+#        subPath: "config"
       data:
         enabled: true
         type: pvc
