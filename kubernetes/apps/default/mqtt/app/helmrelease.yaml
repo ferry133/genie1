@@ -5,6 +5,17 @@ metadata:
   name: mqtt
   namespace: default
 spec:
+  postRenderers:
+    - kustomize:
+        patchesJson6902:
+          - target:
+              kind: Service
+#              name: old-service
+            patch:
+              - op: replace
+                path: /metadata/name
+                value: "{{ .Release.Name }}-tcproute" #"new-service"
+        hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
   interval: 15m
   timeout: 5m
   chart:
