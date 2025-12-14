@@ -15,7 +15,6 @@ spec:
               - op: replace
                 path: /metadata/name
                 value: "{{ .Release.Name }}-tcproute" #"new-service"
-        hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
   interval: 15m
   timeout: 5m
   chart:
