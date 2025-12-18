@@ -22,10 +22,6 @@ spec:
               LOG_WITHOUT_NEWLINE: true
               LOG_IGNORE_PATH: /healthz
               PROMETHEUS_ENABLED: true
-            volumes:
-              - name: data
-                persistentVolumeClaim:
-                  claimName: "mqtt-nfs"
             ports:
               - name: mqtt
                 containerPort: &port 1883
