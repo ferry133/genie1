@@ -55,11 +55,9 @@ spec:
     service:
       app:
         ports:
-          - name: mqtt
+          http:
             port: *port
-            targetPort: *port
-#          http:
-#            port: *port
+            protocol: TCP
 #    serviceMonitor:
 #      app:
 #        endpoints:
