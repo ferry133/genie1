@@ -52,9 +52,12 @@ spec:
         runAsNonRoot: true
         runAsUser: 65534
         runAsGroup: 65534
-#    service:
-#      app:
-#        ports:
+    service:
+      app:
+        ports:
+          - name: mqtt
+            port: *port
+            targetPort: *port
 #          http:
 #            port: *port
 #    serviceMonitor:
