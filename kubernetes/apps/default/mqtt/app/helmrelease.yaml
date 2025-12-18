@@ -16,7 +16,7 @@ spec:
           app:
             image:
               repository: docker.io/eclipse-mosquitto/mosquitto
-              tag: v2.0.22
+              tag: latest
             env:
               TZ: "Asia/Taipei"
               LOG_WITHOUT_NEWLINE: true
