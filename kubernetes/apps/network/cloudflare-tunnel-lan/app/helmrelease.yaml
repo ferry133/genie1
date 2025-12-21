@@ -4,90 +4,49 @@ kind: HelmRelease
 metadata:
   name: cloudflare-tunnel-lan
 spec:
+  interval: 1h
+  replicas: 2
+  selector:
+    matchLabels:
+      pod: cloudflared
+  template:
+    metadata:
+      labels:
+        pod: cloudflared
+    spec:
+      securityContext:
+        sysctls:
+        # Allows ICMP traffic (ping, traceroute) to resources behind cloudflared.
+          - name: net.ipv4.ping_group_range
+            value: "65532 65532"
   chartRef:
     kind: OCIRepository
     name: cloudflare-tunnel-lan
-  interval: 1h
+    namespace: network
   values:
-    controllers:
-      cloudflare-tunnel:
-        strategy: RollingUpdate
-        annotations:
-          reloader.stakater.com/auto: "true"
-        containers:
-          app:
-            image:
-              repository: docker.io/cloudflare/cloudflared
-              tag: latest
-            env:
-              NO_AUTOUPDATE: true
-              TUNNEL_METRICS: 0.0.0.0:8080
-              TUNNEL_POST_QUANTUM: true # disable when using http2
-              TUNNEL_TRANSPORT_PROTOCOL: quic # or http2
-#              token: eyJhIjoiYjY2YWU3Mzc4ZmZlNDIyNWQ3MDJhMmNkZDMwYWQ1ZmQiLCJ0IjoiZjhmZDc1ZWQtYTQ4Yi00NGFiLTkzNjYtMjU5MmFlZDUxMzQzIiwicyI6Ik56a3dPVE13WkRBdFkyTm1OQzAwTldNMkxXSmxObVl0TjJZeFptWmpNRGMyTURJNSJ9
-              # Defines an environment variable for the tunnel token.
-            envFrom:
-#              - name: TUNNEL_TOKEN
-#                valueFrom:
-              - secretKeyRef:
-                name: tunnel-default-lan-token
-                key: token
-#            envFrom:
-#              - secretRef:
-#                  name: cloudflare-tunnel-secret
-            args: ["tunnel", "run"]
-#            args: ["tunnel", "run", "--token", "eyJhIjoiYjY2YWU3Mzc4ZmZlNDIyNWQ3MDJhMmNkZDMwYWQ1ZmQiLCJ0IjoiZjhmZDc1ZWQtYTQ4Yi00NGFiLTkzNjYtMjU5MmFlZDUxMzQzIiwicyI6Ik56a3dPVE13WkRBdFkyTm1OQzAwTldNMkxXSmxObVl0TjJZeFptWmpNRGMyTURJNSJ9"]
-            probes:
-              liveness: &probes
-                enabled: true
-                custom: true
-                spec:
-                  httpGet:
-                    path: /ready
-                    port: &port 8080
-                  initialDelaySeconds: 0
-                  periodSeconds: 10
-                  timeoutSeconds: 1
-                  failureThreshold: 3
-              readiness: *probes
-            securityContext:
-              allowPrivilegeEscalation: false
-              readOnlyRootFilesystem: true
-              capabilities: { drop: ["ALL"] }
-            resources:
-              requests:
-                cpu: 10m
-              limits:
-                memory: 256Mi
-    defaultPodOptions:
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 65534
-        runAsGroup: 65534
-    service:
-      app:
-        ports:
-          http:
-            port: *port
-    serviceMonitor:
-      app:
-        endpoints:
-          - port: http
-#    configMaps:
-#      config:
-#        data:
-#          config.yaml: |-
-#            ingress:
-#              - hostname: "*.${SECRET_DOMAIN}"
-#                originRequest:
-#                  http2Origin: true
-#                  originServerName: external.${SECRET_DOMAIN}
-#                service: https://envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
-#              - service: http_status:404
-#    persistence:
-#      config-file:
-#        type: configMap
-#        identifier: config
-#        globalMounts:
-#          - path: /etc/cloudflared/config.yaml
-#            subPath: config.yaml
+    env:
+      # Defines an environment variable for the tunnel token.
+      - name: TUNNEL_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: tunnel-default-lan-token
+            key: token
+    command:
+      # Configures tunnel run parameters
+      - cloudflared
+      - tunnel
+      - --no-autoupdate
+      - --loglevel
+      - info
+      - --metrics
+      - 0.0.0.0:2000
+      - run
+    livenessProbe:
+      httpGet:
+        # Cloudflared has a /ready endpoint which returns 200 if and only if
+        # it has an active connection to Cloudflare's network.
+        path: /ready
+        port: 2000
+      failureThreshold: 1
+      initialDelaySeconds: 10
+      periodSeconds: 10

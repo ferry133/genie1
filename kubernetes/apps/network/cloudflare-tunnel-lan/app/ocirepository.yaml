@@ -4,10 +4,10 @@ kind: OCIRepository
 metadata:
   name: cloudflare-tunnel-lan
 spec:
-  interval: 15m
+  interval: 10m
   layerSelector:
     mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
     operation: copy
+  url: oci://docker.io/cloudflare/cloudflared
   ref:
-    tag: 4.4.0
-  url: oci://ghcr.io/bjw-s-labs/helm/app-template
+    tag: latest
