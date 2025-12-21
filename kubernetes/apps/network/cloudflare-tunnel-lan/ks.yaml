@@ -5,7 +5,7 @@ metadata:
   name: cloudflare-tunnel-lan
 spec:
   interval: 1h
-  path: ./kubernetes/apps/network/cloudflare-tunnel/app
+  path: ./kubernetes/apps/network/cloudflare-tunnel-lan/app
   postBuild:
     substituteFrom:
       - name: cluster-secrets
