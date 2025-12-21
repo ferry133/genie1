@@ -27,11 +27,11 @@ spec:
 #              token: eyJhIjoiYjY2YWU3Mzc4ZmZlNDIyNWQ3MDJhMmNkZDMwYWQ1ZmQiLCJ0IjoiZjhmZDc1ZWQtYTQ4Yi00NGFiLTkzNjYtMjU5MmFlZDUxMzQzIiwicyI6Ik56a3dPVE13WkRBdFkyTm1OQzAwTldNMkxXSmxObVl0TjJZeFptWmpNRGMyTURJNSJ9
               # Defines an environment variable for the tunnel token.
             envFrom:
-              - name: TUNNEL_TOKEN
-                valueFrom:
-                  secretKeyRef:
-                    name: tunnel-default-lan-token
-                    key: token
+#              - name: TUNNEL_TOKEN
+#                valueFrom:
+              - secretKeyRef:
+                name: tunnel-default-lan-token
+                key: token
 #            envFrom:
 #              - secretRef:
 #                  name: cloudflare-tunnel-secret
