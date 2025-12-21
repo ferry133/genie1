@@ -10,6 +10,7 @@
 # Template config files
 /cluster.yaml
 /nodes.yaml
+/cloudflare-tunnel-default-secret.yaml
 # Kubernetes
 kubeconfig
 talosconfig
