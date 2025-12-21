@@ -10,19 +10,11 @@ spec:
     kind: OCIRepository
     name: cloudflare-tunnel-lan
     namespace: network
-  selector:
-    matchLabels:
-      pod: cloudflared
-  template:
-    metadata:
-      labels:
-        pod: cloudflared
-    spec:
-      securityContext:
-        sysctls:
-        # Allows ICMP traffic (ping, traceroute) to resources behind cloudflared.
-          - name: net.ipv4.ping_group_range
-            value: "65532 65532"
+  securityContext:
+    sysctls:
+    # Allows ICMP traffic (ping, traceroute) to resources behind cloudflared.
+      - name: net.ipv4.ping_group_range
+        value: "65532 65532"
   values:
     env:
       # Defines an environment variable for the tunnel token.
