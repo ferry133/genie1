@@ -4,6 +4,10 @@ kind: HelmRelease
 metadata:
   name: cloudflare-tunnel-lan
 spec:
+  chartRef:
+    kind: OCIRepository
+    name: cloudflare-tunnel-lan
+    namespace: network
   interval: 1h
   replicas: 2
   selector:
@@ -19,10 +23,6 @@ spec:
         # Allows ICMP traffic (ping, traceroute) to resources behind cloudflared.
           - name: net.ipv4.ping_group_range
             value: "65532 65532"
-  chartRef:
-    kind: OCIRepository
-    name: cloudflare-tunnel-lan
-    namespace: network
   values:
     env:
       # Defines an environment variable for the tunnel token.
