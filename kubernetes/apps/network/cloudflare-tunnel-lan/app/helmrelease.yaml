@@ -76,10 +76,10 @@ spec:
 #                  originServerName: external.${SECRET_DOMAIN}
 #                service: https://envoy-external.{{ .Release.Namespace }}.svc.cluster.local:443
 #              - service: http_status:404
-    persistence:
-      config-file:
-        type: configMap
-        identifier: config
-        globalMounts:
-          - path: /etc/cloudflared/config.yaml
-            subPath: config.yaml
+#    persistence:
+#      config-file:
+#        type: configMap
+#        identifier: config
+#        globalMounts:
+#          - path: /etc/cloudflared/config.yaml
+#            subPath: config.yaml
