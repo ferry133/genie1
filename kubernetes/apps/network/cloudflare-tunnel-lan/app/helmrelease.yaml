@@ -6,11 +6,11 @@ metadata:
 spec:
 #  interval: 1h
 #  replicas: 2
-  securityContext:
-    sysctls:
+#  securityContext:
+#    sysctls:
     # Allows ICMP traffic (ping, traceroute) to resources behind cloudflared.
-      - name: net.ipv4.ping_group_range
-        value: "65532 65532"
+#      - name: net.ipv4.ping_group_range
+#        value: "65532 65532"
   chartRef:
     kind: OCIRepository
     name: cloudflare-tunnel-lan
