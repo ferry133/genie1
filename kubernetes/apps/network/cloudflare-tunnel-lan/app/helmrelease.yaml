@@ -4,8 +4,8 @@ kind: HelmRelease
 metadata:
   name: cloudflare-tunnel-lan
 spec:
-  interval: 1h
-  replicas: 2
+#  interval: 1h
+#  replicas: 2
   chartRef:
     kind: OCIRepository
     name: cloudflare-tunnel-lan
