@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 10m
   layerSelector:
-    mediaType: "application/vnd.cncf.helm.chart.content.v1.tar+gzip"
+#    mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
     operation: copy
   url: oci://docker.io/cloudflare/cloudflared
   ref:
