@@ -12,7 +12,7 @@ spec:
       chart: mariadb
 #      version: '24.0.2'
       sourceRef:
-        kind: HelmRepository
+        kind: OCIRepository
         name: bitnami
         namespace: default
       interval: 5m
