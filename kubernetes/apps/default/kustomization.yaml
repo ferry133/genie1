@@ -11,4 +11,5 @@ resources:
   - ./echo/ks.yaml
   - ./homebridge/ks.yaml
   - ./mqtt/ks.yaml
+  - ./mariadb/ks.yaml
 

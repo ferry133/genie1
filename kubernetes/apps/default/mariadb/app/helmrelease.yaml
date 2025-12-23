@@ -1,0 +1,31 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: my-mariadb
+  namespace: default
+spec:
+  interval: 15m
+  timeout: 5m
+  chart:
+    spec:
+      chart: mariadb
+      version: '24.0.2'
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: default
+      interval: 5m
+  values:
+    replicaCount: 1
+    env:
+      TZ: "Asia/Taipei"
+    hostNetwork: true
+    primary:
+      persistence:
+        enabled: true
+        size: 50Gi
+        existingClaim: "mariadb-nfs"
+#        storageClass: ds2-homedirect
+#        subPath: "k8s_hb_mount"
+
