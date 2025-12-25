@@ -18,8 +18,8 @@ spec:
       interval: 4m
   values:
 #    replicaCount: 1
-    env:
-      TZ: "Asia/Taipei"
+#    env:
+#      TZ: "Asia/Taipei"
     storage:
       data:
         size: 20Gi
