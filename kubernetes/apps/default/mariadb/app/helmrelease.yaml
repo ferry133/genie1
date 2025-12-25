@@ -19,8 +19,8 @@ spec:
   values:
 #    replicaCount: 1
     env:
-      MARIADB_ROOT_PASSWORD: "root"
-#      TZ: "Asia/Taipei"
+      MARIADB_ROOT_PASSWORD: "asterisk"
+      TZ: "Asia/Taipei"
     settings:
       rootPassword: "root"
     storage:
