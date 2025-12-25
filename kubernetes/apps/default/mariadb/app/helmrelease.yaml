@@ -21,8 +21,8 @@ spec:
     env:
       MARIADB_ROOT_PASSWORD: "asterisk"
       TZ: "Asia/Taipei"
-    settings:
-      rootPassword: "root"
+#    settings:
+#      rootPassword: "root"
     storage:
       data:
         size: 20Gi
