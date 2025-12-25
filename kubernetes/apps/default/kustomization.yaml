@@ -12,4 +12,5 @@ resources:
   - ./homebridge/ks.yaml
   - ./mqtt/ks.yaml
   - ./mariadb/ks.yaml
+  - ./freepbx/ks.yaml
 

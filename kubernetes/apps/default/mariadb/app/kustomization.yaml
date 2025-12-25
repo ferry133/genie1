@@ -4,6 +4,5 @@ kind: Kustomization
 resources:
   - ./nfs-pvc.yaml
   - ./helmrepository.yaml
-#  - ./ocirepository.yaml
   - ./helmrelease.yaml
 #  - ./httproute.yaml

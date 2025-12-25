@@ -23,22 +23,7 @@ spec:
         value: "asterisk"
       - name: TZ
         value: "Asia/Taipei"
-#    settings:
-#      rootPassword: "root"
     storage:
       data:
         size: 20Gi
         existingClaim: "mariadb-nfs"
-
-#    hostNetwork: true
-#    persistence:
-#      config:
-#        enabled: true
-#        type: pvc
-#        existingClaim: "mariadb-nfs"
-
-#    persistence:
-#      enabled: true
-#      size: 50Gi
-#      existingClaim: "mariadb-nfs"
-
