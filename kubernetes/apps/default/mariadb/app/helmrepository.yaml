@@ -6,4 +6,5 @@ metadata:
   namespace: default
 spec:
   interval: 5h
+  type: OCI
   url: https://charts.bitnami.com/bitnami
