@@ -4,10 +4,7 @@ kind: OCIRepository
 metadata:
   name: bitnami
 spec:
-  interval: 15m
-  layerSelector:
-    mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
-    operation: copy
-  ref:
-    tag: 24.0.2
+  interval: 5m0s
   url: oci://registry-1.docker.io/bitnamicharts/mariadb
+  ref:
+    tag: latest
