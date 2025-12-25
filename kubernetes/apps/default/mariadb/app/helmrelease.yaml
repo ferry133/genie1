@@ -22,12 +22,10 @@ spec:
       TZ: "Asia/Taipei"
 #    hostNetwork: true
     persistence:
-      data:
+      config:
         enabled: true
         type: pvc
         existingClaim: "mariadb-nfs"
-        subPath: "data"
-        size: 50Gi
 
 #    persistence:
 #      enabled: true
