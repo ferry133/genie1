@@ -17,7 +17,7 @@ spec:
         namespace: default
       interval: 4m
   values:
-    replicaCount: 1
+#    replicaCount: 1
     env:
       TZ: "Asia/Taipei"
 #    hostNetwork: true
