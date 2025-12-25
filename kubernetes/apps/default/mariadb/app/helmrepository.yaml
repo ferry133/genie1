@@ -2,10 +2,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: nicholaswilde
+  name: groundhog2k
   namespace: default
 spec:
   interval: 5h
-  url: https://krakazyabra.github.io/microservices
+  url: https://groundhog2k.github.io/helm-charts/
 #  url: https://nicholaswilde.github.io/helm-charts/
 #  url: https://charts.bitnami.com/bitnami

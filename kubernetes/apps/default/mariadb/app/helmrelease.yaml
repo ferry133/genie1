@@ -13,13 +13,18 @@ spec:
 #      version: '24.0.2'
       sourceRef:
         kind: HelmRepository
-        name: nicholaswilde
+        name: groundhog2k
         namespace: default
       interval: 4m
   values:
 #    replicaCount: 1
     env:
       TZ: "Asia/Taipei"
+    storage:
+      data:
+        size: 20Gi
+        existingClaim: "mariadb-nfs"
+
 #    hostNetwork: true
 #    persistence:
 #      config:
