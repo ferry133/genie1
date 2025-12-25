@@ -18,7 +18,8 @@ spec:
       interval: 4m
   values:
 #    replicaCount: 1
-#    env:
+    env:
+      MARIADB_ROOT_PASSWORD: "root"
 #      TZ: "Asia/Taipei"
     settings:
       rootPassword: "root"
