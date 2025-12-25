@@ -1,15 +1,15 @@
 ---
 apiVersion: gateway.networking.k8s.io/v1alpha2
-kind: TCPRoute
+kind: UDPRoute
 metadata:
-  name: mqtt
+  name: freepbx
 spec:
   parentRefs:
-    - name: tcp-gateway
+    - name: udp-gateway
       namespace: default
-      sectionName: mqtt-tcp
+      sectionName: pjsip-udp
   rules:
     - backendRefs:
-        - name: mqtt-mosquitto
+        - name: freepbx
           namespace: default
-          port: 1883
+          port: 5060
