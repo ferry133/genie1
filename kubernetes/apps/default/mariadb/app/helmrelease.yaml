@@ -21,11 +21,11 @@ spec:
     env:
       TZ: "Asia/Taipei"
 #    hostNetwork: true
-    persistence:
-      config:
-        enabled: true
-        type: pvc
-        existingClaim: "mariadb-nfs"
+#    persistence:
+#      config:
+#        enabled: true
+#        type: pvc
+#        existingClaim: "mariadb-nfs"
 
 #    persistence:
 #      enabled: true
