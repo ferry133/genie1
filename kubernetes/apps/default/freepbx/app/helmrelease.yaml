@@ -23,8 +23,8 @@ spec:
               LOG_IGNORE_PATH: /healthz
               PROMETHEUS_ENABLED: true
               DB_HOST: "my-mariadb.default.svc.cluster.local"
-              DB_USER: "root"
-              DB_PASS: "asterisk"
+              DB_USER: "asterisk"
+              DB_PASS: "asteriskpass"
             probes:
               liveness: &probes
                 enabled: true

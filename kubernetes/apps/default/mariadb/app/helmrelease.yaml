@@ -20,9 +20,15 @@ spec:
 #    replicaCount: 1
     env:
       - name: MARIADB_ROOT_PASSWORD
-        value: "asterisk"
+        value: "rootpass"
       - name: TZ
         value: "Asia/Taipei"
+      - name: MARIADB_USER
+        value: "asterisk"
+      - name: MARIADB_PASSWORD
+        value: "asteriskpass"
+      - name: MARIADB_DATABASE
+        value: "asterisk"
     storage:
       data:
         size: 20Gi
