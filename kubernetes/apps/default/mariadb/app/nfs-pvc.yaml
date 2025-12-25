@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: mariadb-nfs
-  annotations:
+#  annotations:
 #    nfs.io/storage-path: "k8shomebridge" # not required, depending on whether this annotation was shown in the storage class description
 spec:
   accessModes:
