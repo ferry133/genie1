@@ -20,6 +20,8 @@ spec:
 #    replicaCount: 1
 #    env:
 #      TZ: "Asia/Taipei"
+    settings:
+      allowemptypassword: true
     storage:
       data:
         size: 20Gi
