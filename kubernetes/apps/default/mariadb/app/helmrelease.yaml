@@ -15,7 +15,7 @@ spec:
         kind: HelmRepository
         name: nicholaswilde
         namespace: default
-      interval: 5m
+      interval: 4m
   values:
     replicaCount: 1
     env:
