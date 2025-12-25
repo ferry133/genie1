@@ -2,9 +2,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: bitnami
+  name: krakazyabra
   namespace: default
 spec:
   interval: 5h
-  type: OCI
-  url: https://charts.bitnami.com/bitnami
+  url: https://krakazyabra.github.io/microservices
+#  url: https://charts.bitnami.com/bitnami

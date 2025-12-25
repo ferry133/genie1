@@ -13,7 +13,7 @@ spec:
 #      version: '24.0.2'
       sourceRef:
         kind: HelmRepository
-        name: bitnami
+        name: krakazyabra
         namespace: default
       interval: 5m
   values:
