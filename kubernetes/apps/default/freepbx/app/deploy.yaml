@@ -29,9 +29,6 @@ spec:
             - containerPort: 5060
               name: sip
               protocol: UDP
-            - containerPort: 5060
-              name: sip-tcp
-              protocol: TCP
             - containerPort: 18000
               name: rtp-start
               protocol: UDP
