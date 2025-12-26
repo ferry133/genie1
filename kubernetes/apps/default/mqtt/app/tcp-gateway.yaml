@@ -15,9 +15,3 @@ spec:
     allowedRoutes:
       kinds:
       - kind: TCPRoute
-  - name: pjsip-udp
-    protocol: UDP
-    port: 5060
-    allowedRoutes:
-      kinds:
-      - kind: UDPRoute

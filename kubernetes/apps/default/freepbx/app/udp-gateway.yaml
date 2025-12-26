@@ -10,7 +10,7 @@ spec:
 #      value: "10.9.1.254"
   infrastructure:
     annotations:
-      lbipam.cilium.io/ips: "10.9.1.254"
+      lbipam.cilium.io/ips: "10.9.1.11"
   listeners:
   - name: pjsip-udp
     protocol: UDP

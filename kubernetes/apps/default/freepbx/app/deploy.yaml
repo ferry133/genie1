@@ -65,16 +65,29 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: pbx-svc
+  name: pbx-tcpsvc
   namespace: default
   labels:
-    service: pbx-svc
+    service: pbx-tcpsvc
 spec:
   ports:
     - name: http
       type: TCP
       port: 3000
       targetPort: 8081
+  selector:
+    app: pbx-app
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pbx-udpsvc
+  namespace: default
+  labels:
+    service: pbx-udpsvc
+spec:
+  ports:
     - name: sip-udp
       type: UDP
       port: 5060

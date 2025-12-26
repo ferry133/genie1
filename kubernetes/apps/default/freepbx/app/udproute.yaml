@@ -5,12 +5,12 @@ metadata:
   name: freepbx
 spec:
   parentRefs:
-    - name: tcp-gateway
+    - name: udp-gateway
       namespace: default
       sectionName: pjsip-udp
   rules:
     - backendRefs:
         - kind: Service
-          name: pbx-svc
+          name: pbx-udpsvc
           namespace: default
           port: 5060
