@@ -89,6 +89,7 @@ metadata:
 spec:
   ports:
     - name: sip-udp
+      protocol: UDP
       type: UDP
       port: 5060/UDP
       targetPort: 5060/UDP
