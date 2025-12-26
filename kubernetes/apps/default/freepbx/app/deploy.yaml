@@ -5,13 +5,13 @@ metadata:
   namespace: default
 spec:
   replicas: 1
-#  selector:
-#    matchLabels:
-#      pod: freepbx
+  selector:
+    matchLabels:
+      pod: freepbx
   template:
-#    metadata:
-#      labels:
-#        pod: freepbx
+    metadata:
+      labels:
+        pod: freepbx
     spec:
 #      securityContext:
 #        sysctls:
