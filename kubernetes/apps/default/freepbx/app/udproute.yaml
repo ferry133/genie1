@@ -10,6 +10,7 @@ spec:
       sectionName: pjsip-udp
   rules:
     - backendRefs:
-        - name: freepbx
+        - kind: Service
+          name: pbx-svc
           namespace: default
           port: 5060
