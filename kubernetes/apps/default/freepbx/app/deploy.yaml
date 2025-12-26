@@ -8,10 +8,10 @@ spec:
 #  selector:
 #    matchLabels:
 #      pod: freepbx
-  template:
-    metadata:
-      labels:
-        pod: freepbx
+#  template:
+#    metadata:
+#      labels:
+#        pod: freepbx
     spec:
 #      securityContext:
 #        sysctls:
