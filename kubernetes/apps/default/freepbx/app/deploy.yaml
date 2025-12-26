@@ -77,5 +77,17 @@ spec:
     - name: http
       port: 3000
       targetPort: 8081
+    - name: sip-udp
+      port: 5060
+      targetPort: 5060
+    - name: sip-tcp
+      port: 5060
+      targetPort: 5060
+    - name: rtp-start
+      port: 18000
+      targetPort: 18000
+    - name: rtp-end
+      port: 20000
+      targetPort: 20000
   selector:
     app: pbx-app
