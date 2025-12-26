@@ -18,10 +18,10 @@ spec:
 #        # Allows ICMP traffic (ping, traceroute) to resources behind cloudflared.
 #          - name: net.ipv4.ping_group_range
 #            value: "65532 65532"
+      hostNetwork: true
       containers:
         - image: tiredofit/freepbx:5.2.0
           name: freepbx
-          hostNetwork: true
           ports:
             - containerPort: 8081
               name: http
