@@ -11,9 +11,9 @@ spec:
       sectionName: https
   rules:
     - backendRefs:
-        - name: {{ .Release.Name }}
+        - name: freepbx
           namespace: default
-          port: 8581
+          port: 80
       matches:
         - path:
             type: PathPrefix
