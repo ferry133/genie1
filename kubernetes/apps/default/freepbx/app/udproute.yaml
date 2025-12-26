@@ -11,6 +11,7 @@ spec:
   rules:
     - backendRefs:
         - kind: Service
-          name: pbx-udpsvc
+          name: pbx-svc
           namespace: default
+          protocol: UDP
           port: 5060
