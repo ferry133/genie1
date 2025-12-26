@@ -8,7 +8,7 @@ spec:
 #  selector:
 #    matchLabels:
 #      pod: freepbx
-#  template:
+  template:
 #    metadata:
 #      labels:
 #        pod: freepbx
