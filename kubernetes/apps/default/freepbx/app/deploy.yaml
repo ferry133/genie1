@@ -39,7 +39,7 @@ spec:
               name: rtp-end
               protocol: UDP
           env:
-            # Defines an environment variable for the tunnel token.
+            # Defines an environment variable
             - name: TZ
               value: "Asia/Taipei"
             - name: HTTP_PORT
