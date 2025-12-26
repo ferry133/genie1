@@ -13,5 +13,4 @@ spec:
         - kind: Service
           name: pbx-svc
           namespace: default
-          protocol: UDP
           port: 5060
