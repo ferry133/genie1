@@ -23,16 +23,36 @@ spec:
           name: freepbx
           env:
             # Defines an environment variable for the tunnel token.
-            TZ: "Asia/Taipei"
-            HTTP_PORT: &port 80
-            RTP_START: 18000
-            RTP_FINISH: 20000
-            LOG_WITHOUT_NEWLINE: true
-            LOG_IGNORE_PATH: /healthz
-            PROMETHEUS_ENABLED: true
-            DB_HOST: "my-mariadb.default.svc.cluster.local"
-            DB_USER: "asterisk"
-            DB_PASS: "asteriskpass"
+            - name: TZ
+              value: "Asia/Taipei"
+            - name: HTTP_PORT
+              value: "80"
+            - name: RTP_START
+              value: "18000"
+            - name: RTP_FINISH
+              value: "20000"
+            - name: LOG_WITHOUT_NEWLINE
+              value: "true"
+            - name: LOG_IGNORE_PATH
+              value: "/healthz"
+            - name: PROMETHEUS_ENABLED
+              value: "true"
+            - name: DB_HOST
+              value: "my-mariadb.default.svc.cluster.local"
+            - name: DB_USER
+              value: "asterisk"
+            - name: DB_PASS
+              value: "asteriskpass"
+#            TZ: "Asia/Taipei"
+#            HTTP_PORT: &port 80
+#            RTP_START: 18000
+#            RTP_FINISH: 20000
+#            LOG_WITHOUT_NEWLINE: true
+#            LOG_IGNORE_PATH: /healthz
+#            PROMETHEUS_ENABLED: true
+#            DB_HOST: "my-mariadb.default.svc.cluster.local"
+#            DB_USER: "asterisk"
+#            DB_PASS: "asteriskpass"
 #          command:
             # Configures tunnel run parameters
 #            - cloudflared
