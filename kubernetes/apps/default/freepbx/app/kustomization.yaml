@@ -7,3 +7,4 @@ resources:
   - ./helmrelease.yaml
   - ./udp-gateway.yaml
   - ./udproute.yaml
+  - ./httproute.yaml
