@@ -7,7 +7,7 @@ spec:
   gatewayClassName: envoy
   addresses:
     - type: IPAddress
-      value: "10.9.1.2"
+      value: "10.9.1.254"
 #  infrastructure:
 #    annotations:
 #      lbipam.cilium.io/ips: "10.9.1.2"
