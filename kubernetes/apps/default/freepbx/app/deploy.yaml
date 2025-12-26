@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: freepbx
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      pod: freepbx
+  template:
+    metadata:
+      labels:
+        pod: freepbx
+    spec:
+#      securityContext:
+#        sysctls:
+#        # Allows ICMP traffic (ping, traceroute) to resources behind cloudflared.
+#          - name: net.ipv4.ping_group_range
+#            value: "65532 65532"
+      containers:
+        - image: tiredofit/freepbx:5.2.0
+          name: freepbx
+          env:
+            # Defines an environment variable for the tunnel token.
+            TZ: "Asia/Taipei"
+            HTTP_PORT: &port 80
+            RTP_START: 18000
+            RTP_FINISH: 20000
+            LOG_WITHOUT_NEWLINE: true
+            LOG_IGNORE_PATH: /healthz
+            PROMETHEUS_ENABLED: true
+            DB_HOST: "my-mariadb.default.svc.cluster.local"
+            DB_USER: "asterisk"
+            DB_PASS: "asteriskpass"
+#          command:
+            # Configures tunnel run parameters
+#            - cloudflared
+#            - tunnel
+#            - --no-autoupdate
+#            - --loglevel
+#            - info
+#            - --metrics
+#            - 0.0.0.0:2000
+#            - run
+          livenessProbe:
+            httpGet:
+              # Cloudflared has a /ready endpoint which returns 200 if and only if
+              # it has an active connection to Cloudflare's network.
+              path: /ready
+              port: 2000
+            failureThreshold: 1
+            initialDelaySeconds: 10
+            periodSeconds: 10
