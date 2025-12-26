@@ -5,7 +5,7 @@ metadata:
   name: freepbx
 spec:
   parentRefs:
-    - name: udp-gateway
+    - name: tcp-gateway
       namespace: default
       sectionName: pjsip-udp
   rules:
