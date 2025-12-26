@@ -22,12 +22,28 @@ spec:
         - image: tiredofit/freepbx:5.2.0
           name: freepbx
           hostNetwork: true
+          ports:
+            - containerPort: 80
+              name: http
+              protocol: TCP
+            - containerPort: 5060
+              name: sip
+              protocol: UDP
+            - containerPort: 5060
+              name: sip-tcp
+              protocol: TCP
+            - containerPort: 18000
+              name: rtp-start
+              protocol: UDP
+            - containerPort: 20000
+              name: rtp-end
+              protocol: UDP
           env:
             # Defines an environment variable for the tunnel token.
             - name: TZ
               value: "Asia/Taipei"
             - name: HTTP_PORT
-              value: "8080"
+              value: "80"
             - name: RTP_START
               value: "18000"
             - name: RTP_FINISH
@@ -44,6 +60,11 @@ spec:
               value: "asterisk"
             - name: DB_PASS
               value: "asteriskpass"
+          PersistentVolumeClaims:
+            - claimName: freepbx-nfs
+              mountPath: /config
+
+#          command:
 
 
 
