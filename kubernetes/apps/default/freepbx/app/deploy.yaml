@@ -21,6 +21,7 @@ spec:
       containers:
         - image: tiredofit/freepbx:5.2.0
           name: freepbx
+          hostNetwork: true
           env:
             # Defines an environment variable for the tunnel token.
             - name: TZ
@@ -43,6 +44,9 @@ spec:
               value: "asterisk"
             - name: DB_PASS
               value: "asteriskpass"
+
+
+
 #            TZ: "Asia/Taipei"
 #            HTTP_PORT: &port 80
 #            RTP_START: 18000
