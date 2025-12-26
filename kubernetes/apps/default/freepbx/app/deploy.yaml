@@ -80,9 +80,6 @@ spec:
     - name: sip-udp
       port: 5060
       targetPort: 5060
-    - name: sip-tcp
-      port: 5060
-      targetPort: 5060
     - name: rtp-start
       port: 18000
       targetPort: 18000
