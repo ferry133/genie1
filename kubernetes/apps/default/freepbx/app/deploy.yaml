@@ -72,7 +72,7 @@ metadata:
 spec:
   ports:
     - name: http
-      type: TCP
+      protocol: TCP
       port: 3000
       targetPort: 8081
   selector:
@@ -90,15 +90,14 @@ spec:
   ports:
     - name: sip-udp
       protocol: UDP
-      type: UDP
-      port: 5060/UDP
-      targetPort: 5060/UDP
+      port: 5060
+      targetPort: 5060
     - name: rtp-start
-      type: UDP
+      protocol: UDP
       port: 18000
       targetPort: 18000
     - name: rtp-end
-      type: UDP
+      protocol: UDP
       port: 20000
       targetPort: 20000
   selector:
