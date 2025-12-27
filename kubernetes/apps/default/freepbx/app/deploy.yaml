@@ -18,6 +18,8 @@ spec:
 #        # Allows ICMP traffic (ping, traceroute) to resources behind cloudflared.
 #          - name: net.ipv4.ping_group_range
 #            value: "65532 65532"
+      securityContext:
+        runAsUser: 0 # Explicitly sets the user ID to root (0)
       hostNetwork: true
       containers:
         - image: tiredofit/freepbx:5.2.0
