@@ -55,8 +55,12 @@ spec:
               value: "/healthz"
             - name: PROMETHEUS_ENABLED
               value: "true"
+            - name: DB_EMBEDDED
+              value: "false"
             - name: DB_HOST
               value: "my-mariadb.default.svc.cluster.local"
+            - name: DB_NAME
+              value: "asterisk"
             - name: DB_USER
               value: "asterisk"
             - name: DB_PASS
