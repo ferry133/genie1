@@ -58,10 +58,14 @@ spec:
             - name: DB_USER
               value: "asterisk"
             - name: DB_PASS
-              value: "asteriskpass"
-          PersistentVolumeClaims:
-            - claimName: freepbx-nfs
+              value: "asteriskpass
+          volumeMounts:
+            - name: freepbx-volume
               mountPath: /config
+      volumes:
+        - name: freepbx-volume
+          persistentVolumeClaim:
+            claimName: freepbx-nfs
 
 ---
 apiVersion: v1
