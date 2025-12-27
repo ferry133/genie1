@@ -61,7 +61,7 @@ spec:
               value: "asteriskpass"
           volumeMounts:
             - name: freepbx-volume
-              mountPath: /config
+              mountPath: /data
       volumes:
         - name: freepbx-volume
           persistentVolumeClaim:
