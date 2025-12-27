@@ -58,7 +58,7 @@ spec:
             - name: DB_USER
               value: "asterisk"
             - name: DB_PASS
-              value: "asteriskpass
+              value: "asteriskpass"
           volumeMounts:
             - name: freepbx-volume
               mountPath: /config
