@@ -31,6 +31,7 @@ helm install homebridge \
 k3s kubectl delete -f hd-pod.yaml
 k3s kubectl apply -f hd-pod.yaml
 k3s kubectl get pod
+# kubectl run -it --rm debug --image=busybox:1.28.4 --restart=Never -- sh
 # k3s kubectl exec -it hdconfig-pod -- /bin/bash
 # k3s kubectl exec -it hdrouter-pod -- /bin/bash
 # k3s kubectl exec -it hdbroker-pod -- /bin/bash

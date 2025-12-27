@@ -58,7 +58,8 @@ spec:
             - name: DB_EMBEDDED
               value: "false"
             - name: DB_HOST
-              value: "my-mariadb.default.svc.cluster.local"
+              value: "10.9.1.2"
+#              value: "my-mariadb.default.svc.cluster.local"
             - name: DB_NAME
               value: "asterisk"
             - name: DB_USER

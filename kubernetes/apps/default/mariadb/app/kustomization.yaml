@@ -5,4 +5,5 @@ resources:
   - ./nfs-pvc.yaml
   - ./helmrepository.yaml
   - ./helmrelease.yaml
-#  - ./httproute.yaml
+  - ./tcp-gateway.yaml
+  - ./tcproute.yaml
