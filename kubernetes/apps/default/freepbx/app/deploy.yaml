@@ -53,7 +53,10 @@ spec:
 #              value: "true"
               value: "false"
             - name: DB_HOST
-              value: "localhost"
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+#              value: "localhost"
 #              value: "10.9.1.2"
 #              value: "my-mariadb.default.svc.cluster.local"
             - name: DB_NAME
