@@ -19,10 +19,10 @@ spec:
   values:
 #    replicaCount: 1
     env:
-      - name: MARIADB_ROOT_PASSWORD
-        value: "rootpass"
       - name: TZ
         value: "Asia/Taipei"
+      - name: MARIADB_ROOT_PASSWORD
+        value: "password"
       - name: MARIADB_USER
         value: "asterisk"
       - name: MARIADB_PASSWORD
