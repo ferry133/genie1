@@ -98,8 +98,10 @@ spec:
             - name: DB_PASS
               value: "asteriskpass"
           volumeMounts:
-            - name: freepbx-volume
+            - name: data-volume
               mountPath: /data
+            - name: html-volume
+              mountPath: /var/www/html
 #          resources:
 #            requests:
 #              memory: "64Mi"
@@ -108,9 +110,12 @@ spec:
 #              memory: "128Mi"
 #              cpu: "1500m"
       volumes:
-        - name: freepbx-volume
+        - name: data-volume
           persistentVolumeClaim:
-            claimName: freepbx-nfs
+            claimName: freepbx-data-nfs
+        - name: html-volume
+          persistentVolumeClaim:
+            claimName: freepbx-html-nfs
         - name: db-volume
           persistentVolumeClaim:
             claimName: pbxdb-nfs
