@@ -15,9 +15,9 @@ spec:
     allowedRoutes:
       kinds:
       - kind: TCPRoute
-#  - name: mariadb-tcp
-#    protocol: TCP
-#    port: 3306
-#    allowedRoutes:
-#      kinds:
-#      - kind: TCPRoute
+  - name: mariadb-tcp
+    protocol: TCP
+    port: 3306
+    allowedRoutes:
+      kinds:
+      - kind: TCPRoute

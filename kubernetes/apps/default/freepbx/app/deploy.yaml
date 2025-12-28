@@ -50,44 +50,45 @@ spec:
             - name: LOG_WITHOUT_NEWLINE
               value: "true"
             - name: DB_EMBEDDED
-              value: "true"
-#              value: "false"
-#            - name: DB_HOST
+#              value: "true"
+              value: "false"
+            - name: DB_HOST
+              value: "localhost"
 #              value: "10.9.1.2"
 #              value: "my-mariadb.default.svc.cluster.local"
-#            - name: DB_NAME
-#              value: "asterisk"
-#            - name: DB_USER
-#              value: "asterisk"
-#            - name: DB_PASS
-#              value: "asteriskpass"
+            - name: DB_NAME
+              value: "asterisk"
+            - name: DB_USER
+              value: "asterisk"
+            - name: DB_PASS
+              value: "asteriskpass"
           volumeMounts:
             - name: freepbx-volume
               mountPath: /data
-#        - image: tiredofit/mariadb:10.5
-#          name: freepbx-db
-#          env:
-#            # Defines an environment variable
-#            - name: TZ
-#              value: "Asia/Taipei"
-#            - name: MYSQL_ROOT_PASSWORD
-#              value: "password"
-#            - name: MYSQL_DATABASE
-#              value: "asterisk"
-#            - name: MYSQL_USER
-#              value: "asterisk"
-#            - name: MYSQL_PASSWORD
-#              value: "asteriskpass"
-#          volumeMounts:
-#            - name: db-volume
-#              mountPath: /var/lib/mysql
+        - image: tiredofit/mariadb:10.5
+          name: freepbx-db
+          env:
+            # Defines an environment variable
+            - name: TZ
+              value: "Asia/Taipei"
+            - name: MYSQL_ROOT_PASSWORD
+              value: "password"
+            - name: MYSQL_DATABASE
+              value: "asterisk"
+            - name: MYSQL_USER
+              value: "asterisk"
+            - name: MYSQL_PASSWORD
+              value: "asteriskpass"
+          volumeMounts:
+            - name: db-volume
+              mountPath: /var/lib/mysql
       volumes:
         - name: freepbx-volume
           persistentVolumeClaim:
             claimName: freepbx-nfs
-#        - name: db-volume
-#          persistentVolumeClaim:
-#            claimName: pbxdb-nfs
+        - name: db-volume
+          persistentVolumeClaim:
+            claimName: pbxdb-nfs
 
 ---
 apiVersion: v1
