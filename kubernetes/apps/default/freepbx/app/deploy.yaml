@@ -68,6 +68,13 @@ spec:
           volumeMounts:
             - name: freepbx-volume
               mountPath: /data
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
         - image: tiredofit/mariadb:10.5
           name: freepbx-db
           env:
@@ -85,6 +92,13 @@ spec:
           volumeMounts:
             - name: db-volume
               mountPath: /var/lib/mysql
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
       volumes:
         - name: freepbx-volume
           persistentVolumeClaim:
