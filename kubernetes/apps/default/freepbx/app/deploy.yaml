@@ -14,6 +14,13 @@ spec:
       labels:
         app: pbx-app
     spec:
+      resources:
+        limits:
+          cpu: "1"
+          memory: "1Gi"
+        requests:
+          cpu: "1"
+          memory: "500Mi"
       securityContext:
         runAsUser: 0 # Explicitly sets the user ID to root (0)
         runAsGroup: 0 # Explicitly sets the group ID to root (0)
