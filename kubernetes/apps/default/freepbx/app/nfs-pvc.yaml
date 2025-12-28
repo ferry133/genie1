@@ -7,7 +7,7 @@ metadata:
 #    nfs.io/storage-path: "k8shomebridge" # not required, depending on whether this annotation was shown in the storage class description
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: ds2-homedirect
   resources:
     requests:
@@ -22,7 +22,7 @@ metadata:
 #    nfs.io/storage-path: "k8shomebridge" # not required, depending on whether this annotation was shown in the storage class description
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: ds2-homedirect
   resources:
     requests:
