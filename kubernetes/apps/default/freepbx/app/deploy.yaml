@@ -27,6 +27,31 @@ spec:
         runAsNonRoot: false # Disables the non-root user enforcement
       hostNetwork: true
       containers:
+        - image: tiredofit/mariadb:10.5
+          name: freepbx-db
+          env:
+            # Defines an environment variable
+            - name: TZ
+              value: "Asia/Taipei"
+            - name: MYSQL_ROOT_PASSWORD
+              value: "password"
+            - name: MYSQL_DATABASE
+              value: "asterisk"
+            - name: MYSQL_USER
+              value: "asterisk"
+            - name: MYSQL_PASSWORD
+              value: "asteriskpass"
+          volumeMounts:
+            - name: db-volume
+              mountPath: /var/lib/mysql
+#          resources:
+#            requests:
+#              memory: "128Mi"
+#              cpu: "250m"
+#            limits:
+#              memory: "512Mi"
+#              cpu: "500m"
+
         - image: tiredofit/freepbx:5.2.0
           name: freepbx
           ports:
@@ -82,30 +107,6 @@ spec:
 #            limits:
 #              memory: "128Mi"
 #              cpu: "1500m"
-        - image: tiredofit/mariadb:10.5
-          name: freepbx-db
-          env:
-            # Defines an environment variable
-            - name: TZ
-              value: "Asia/Taipei"
-            - name: MYSQL_ROOT_PASSWORD
-              value: "password"
-            - name: MYSQL_DATABASE
-              value: "asterisk"
-            - name: MYSQL_USER
-              value: "asterisk"
-            - name: MYSQL_PASSWORD
-              value: "asteriskpass"
-          volumeMounts:
-            - name: db-volume
-              mountPath: /var/lib/mysql
-#          resources:
-#            requests:
-#              memory: "128Mi"
-#              cpu: "250m"
-#            limits:
-#              memory: "512Mi"
-#              cpu: "500m"
       volumes:
         - name: freepbx-volume
           persistentVolumeClaim:
