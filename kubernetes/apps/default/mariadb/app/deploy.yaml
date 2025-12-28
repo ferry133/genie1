@@ -26,18 +26,32 @@ spec:
         runAsGroup: 0 # Explicitly sets the group ID to root (0)
         runAsNonRoot: false # Disables the non-root user enforcement
       hostNetwork: true
-# What this does:
-# 1. InitContainer starts before the main container (handled by Kubernetes)
-# 2. until allows us to loop forever, until all the chained commands run successfully
-# 3. nc -vz -w 2 <service> <port> runs netcat (nc) with a 2 second timeout (-w 2), verbose output (-v), and listens for an open socket only, then disconnects (-z).
-# 4. If the netcat connection to postgres is successful, then we continue down the command chain, attempting to connect to minio. All the echo commands are purely for log transparency and can be removed.
-# 5. both connections are successful, the InitContainer exits and kubernetes will start the main container (handled by Kubernetes).
-      initContainers:
-        - name: wait-for-services
-          image: busybox
-          command: ["/bin/sh","-c"]
-          args: ["until echo 'Waiting for mariadb...' && nc -vz -w 2 10.9.1.2 3306 ; do echo 'Looping forever...'; sleep 2; done;"]
       containers:
+        - image: tiredofit/mariadb:10.5
+          name: freepbx-db
+          env:
+            # Defines an environment variable
+            - name: TZ
+              value: "Asia/Taipei"
+            - name: MYSQL_ROOT_PASSWORD
+              value: "password"
+            - name: MYSQL_DATABASE
+              value: "asterisk"
+            - name: MYSQL_USER
+              value: "asterisk"
+            - name: MYSQL_PASSWORD
+              value: "asteriskpass"
+          volumeMounts:
+            - name: db-volume
+              mountPath: /var/lib/mysql
+#          resources:
+#            requests:
+#              memory: "128Mi"
+#              cpu: "250m"
+#            limits:
+#              memory: "512Mi"
+#              cpu: "500m"
+
         - image: tiredofit/freepbx:5.2.0
           name: freepbx
           ports:
@@ -71,11 +85,11 @@ spec:
 #              value: "true"
               value: "false"
             - name: DB_HOST
-#              valueFrom:
-#                fieldRef:
-#                  fieldPath: status.podIP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
 #              value: "localhost"
-              value: "10.9.1.2"
+#              value: "10.9.1.2"
 #              value: "my-mariadb.default.svc.cluster.local"
             - name: DB_NAME
               value: "asterisk"
@@ -102,6 +116,9 @@ spec:
         - name: html-volume
           persistentVolumeClaim:
             claimName: freepbx-html-nfs
+        - name: db-volume
+          persistentVolumeClaim:
+            claimName: pbxdb-nfs
 
 ---
 apiVersion: v1
