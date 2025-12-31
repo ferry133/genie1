@@ -38,7 +38,7 @@ spec:
           command: ["/bin/sh","-c"]
           args: ["until echo 'Waiting for mariadb...' && nc -vz -w 2 10.9.1.2 3306 ; do echo 'Looping forever...'; sleep 2; done;"]
       containers:
-        - image: tiredofit/freepbx:5.2.0
+        - image: tiredofit/freepbx:latest
           name: freepbx
           ports:
             - containerPort: 8081
