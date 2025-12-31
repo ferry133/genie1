@@ -21,11 +21,6 @@ spec:
         requests:
           cpu: "1"
           memory: "500Mi"
-      securityContext:
-        runAsUser: 0 # Explicitly sets the user ID to root (0)
-        runAsGroup: 0 # Explicitly sets the group ID to root (0)
-        runAsNonRoot: false # Disables the non-root user enforcement
-      hostNetwork: true
 # What this does:
 # 1. InitContainer starts before the main container (handled by Kubernetes)
 # 2. until allows us to loop forever, until all the chained commands run successfully
@@ -37,6 +32,11 @@ spec:
           image: busybox
           command: ["/bin/sh","-c"]
           args: ["until echo 'Waiting for mariadb...' && nc -vz -w 2 10.9.1.2 3306 ; do echo 'Looping forever...'; sleep 2; done;"]
+      securityContext:
+        runAsUser: 0 # Explicitly sets the user ID to root (0)
+        runAsGroup: 0 # Explicitly sets the group ID to root (0)
+        runAsNonRoot: false # Disables the non-root user enforcement
+      hostNetwork: true
       containers:
         - image: tiredofit/freepbx:latest
           name: freepbx
