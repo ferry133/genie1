@@ -15,87 +15,87 @@ spec:
           namespace: default
           port: 5060
 
----
-apiVersion: gateway.networking.k8s.io/v1alpha2
-kind: UDPRoute
-metadata:
-  name: freepbx-rtp0
-spec:
-  parentRefs:
-    - name: udp-gateway
-      namespace: default
-      sectionName: rtp-18000
-  rules:
-    - backendRefs:
-        - kind: Service
-          name: pbx-svc
-          namespace: default
-          port: 18000
+# ---
+# apiVersion: gateway.networking.k8s.io/v1alpha2
+# kind: UDPRoute
+# metadata:
+#   name: freepbx-rtp0
+# spec:
+#   parentRefs:
+#     - name: udp-gateway
+#       namespace: default
+#       sectionName: rtp-18000
+#   rules:
+#     - backendRefs:
+#         - kind: Service
+#           name: pbx-svc
+#           namespace: default
+#           port: 18000
 
----
-apiVersion: gateway.networking.k8s.io/v1alpha2
-kind: UDPRoute
-metadata:
-  name: freepbx-rtp1
-spec:
-  parentRefs:
-    - name: udp-gateway
-      namespace: default
-      sectionName: rtp-18001
-  rules:
-    - backendRefs:
-        - kind: Service
-          name: pbx-svc
-          namespace: default
-          port: 18001
+# ---
+# apiVersion: gateway.networking.k8s.io/v1alpha2
+# kind: UDPRoute
+# metadata:
+#   name: freepbx-rtp1
+# spec:
+#   parentRefs:
+#     - name: udp-gateway
+#       namespace: default
+#       sectionName: rtp-18001
+#   rules:
+#     - backendRefs:
+#         - kind: Service
+#           name: pbx-svc
+#           namespace: default
+#           port: 18001
 
----
-apiVersion: gateway.networking.k8s.io/v1alpha2
-kind: UDPRoute
-metadata:
-  name: freepbx-rtp2
-spec:
-  parentRefs:
-    - name: udp-gateway
-      namespace: default
-      sectionName: rtp-18002
-  rules:
-    - backendRefs:
-        - kind: Service
-          name: pbx-svc
-          namespace: default
-          port: 18002
+# ---
+# apiVersion: gateway.networking.k8s.io/v1alpha2
+# kind: UDPRoute
+# metadata:
+#   name: freepbx-rtp2
+# spec:
+#   parentRefs:
+#     - name: udp-gateway
+#       namespace: default
+#       sectionName: rtp-18002
+#   rules:
+#     - backendRefs:
+#         - kind: Service
+#           name: pbx-svc
+#           namespace: default
+#           port: 18002
 
----
-apiVersion: gateway.networking.k8s.io/v1alpha2
-kind: UDPRoute
-metadata:
-  name: freepbx-rtp3
-spec:
-  parentRefs:
-    - name: udp-gateway
-      namespace: default
-      sectionName: rtp-18003
-  rules:
-    - backendRefs:
-        - kind: Service
-          name: pbx-svc
-          namespace: default
-          port: 18003
+# ---
+# apiVersion: gateway.networking.k8s.io/v1alpha2
+# kind: UDPRoute
+# metadata:
+#   name: freepbx-rtp3
+# spec:
+#   parentRefs:
+#     - name: udp-gateway
+#       namespace: default
+#       sectionName: rtp-18003
+#   rules:
+#     - backendRefs:
+#         - kind: Service
+#           name: pbx-svc
+#           namespace: default
+#           port: 18003
 
----
-apiVersion: gateway.networking.k8s.io/v1alpha2
-kind: UDPRoute
-metadata:
-  name: freepbx-rtp4
-spec:
-  parentRefs:
-    - name: udp-gateway
-      namespace: default
-      sectionName: rtp-18004
-  rules:
-    - backendRefs:
-        - kind: Service
-          name: pbx-svc
-          namespace: default
-          port: 18004
+# ---
+# apiVersion: gateway.networking.k8s.io/v1alpha2
+# kind: UDPRoute
+# metadata:
+#   name: freepbx-rtp4
+# spec:
+#   parentRefs:
+#     - name: udp-gateway
+#       namespace: default
+#       sectionName: rtp-18004
+#   rules:
+#     - backendRefs:
+#         - kind: Service
+#           name: pbx-svc
+#           namespace: default
+#           port: 18004

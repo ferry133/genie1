@@ -10,7 +10,7 @@ spec:
 #      value: "10.9.1.254"
   infrastructure:
     annotations:
-      lbipam.cilium.io/ips: "10.9.1.11"
+      lbipam.cilium.io/ips: "10.9.1.51"
   listeners:
   - name: pjsip-udp
     protocol: UDP
@@ -18,33 +18,33 @@ spec:
     allowedRoutes:
       kinds:
       - kind: UDPRoute
-  - name: rtp-18000
-    protocol: UDP
-    port: 18000
-    allowedRoutes:
-      kinds:
-      - kind: UDPRoute
-  - name: rtp-18001
-    protocol: UDP
-    port: 18001
-    allowedRoutes:
-      kinds:
-      - kind: UDPRoute
-  - name: rtp-18002
-    protocol: UDP
-    port: 18002
-    allowedRoutes:
-      kinds:
-      - kind: UDPRoute
-  - name: rtp-18003
-    protocol: UDP
-    port: 18003
-    allowedRoutes:
-      kinds:
-      - kind: UDPRoute
-  - name: rtp-18004
-    protocol: UDP
-    port: 18004
-    allowedRoutes:
-      kinds:
-      - kind: UDPRoute
+  # - name: rtp-18000
+  #   protocol: UDP
+  #   port: 18000
+  #   allowedRoutes:
+  #     kinds:
+  #     - kind: UDPRoute
+  # - name: rtp-18001
+  #   protocol: UDP
+  #   port: 18001
+  #   allowedRoutes:
+  #     kinds:
+  #     - kind: UDPRoute
+  # - name: rtp-18002
+  #   protocol: UDP
+  #   port: 18002
+  #   allowedRoutes:
+  #     kinds:
+  #     - kind: UDPRoute
+  # - name: rtp-18003
+  #   protocol: UDP
+  #   port: 18003
+  #   allowedRoutes:
+  #     kinds:
+  #     - kind: UDPRoute
+  # - name: rtp-18004
+  #   protocol: UDP
+  #   port: 18004
+  #   allowedRoutes:
+  #     kinds:
+  #     - kind: UDPRoute

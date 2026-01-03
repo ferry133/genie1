@@ -131,26 +131,26 @@ spec:
       protocol: UDP
       port: 5060
       targetPort: 5060
-    - name: rtp-udp-0
-      protocol: UDP
-      port: 18000
-      targetPort: 18000
-    - name: rtp-udp-1
-      protocol: UDP
-      port: 18001
-      targetPort: 18001
-    - name: rtp-udp-2
-      protocol: UDP
-      port: 18002
-      targetPort: 18002
-    - name: rtp-udp-3
-      protocol: UDP
-      port: 18003
-      targetPort: 18003
-    - name: rtp-udp-4
-      protocol: UDP
-      port: 18004
-      targetPort: 18004
+    # - name: rtp-udp-0
+    #   protocol: UDP
+    #   port: 18000
+    #   targetPort: 18000
+    # - name: rtp-udp-1
+    #   protocol: UDP
+    #   port: 18001
+    #   targetPort: 18001
+    # - name: rtp-udp-2
+    #   protocol: UDP
+    #   port: 18002
+    #   targetPort: 18002
+    # - name: rtp-udp-3
+    #   protocol: UDP
+    #   port: 18003
+    #   targetPort: 18003
+    # - name: rtp-udp-4
+    #   protocol: UDP
+    #   port: 18004
+    #   targetPort: 18004
 #    - name: rtp-end
 #      protocol: UDP
 #      port: 20000
