@@ -74,7 +74,7 @@ spec:
             - name: RTP_START
               value: "18000"
             - name: RTP_FINISH
-              value: "18004"
+              value: "20000"
             - name: LOG_WITHOUT_NEWLINE
               value: "true"
             - name: DB_EMBEDDED
