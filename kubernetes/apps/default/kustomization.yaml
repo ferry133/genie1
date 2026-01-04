@@ -8,10 +8,10 @@ components:
 
 resources:
   - ./namespace.yaml
-  - ./tcp-gateway.yaml
+#  - ./tcp-gateway.yaml
   - ./echo/ks.yaml
   - ./homebridge/ks.yaml
   - ./mqtt/ks.yaml
-  - ./mariadb/ks.yaml
-  - ./freepbx/ks.yaml
+#  - ./mariadb/ks.yaml
+#  - ./freepbx/ks.yaml
 

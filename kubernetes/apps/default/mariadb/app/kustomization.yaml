@@ -6,5 +6,5 @@ resources:
   - ./deploy.yaml
 #  - ./helmrepository.yaml
 #  - ./helmrelease.yaml
-#  - ./tcp-gateway.yaml
+  - ./tcp-gateway.yaml
   - ./tcproute.yaml
