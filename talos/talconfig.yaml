@@ -19,7 +19,7 @@ cniConfig:
 
 nodes:
   - hostname: "genie-1-0"
-    ipAddress: "10.9.1.50"
+    ipAddress: "10.9.9.9"
     installDisk: "/dev/nvme0n1"
     machineSpec:
       secureboot: false
@@ -27,10 +27,10 @@ nodes:
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "e0:51:d8:1c:52:5c"
+          hardwareAddr: "48:21:0b:6f:de:3a"
         dhcp: false
         addresses:
-          - "10.9.1.50/24"
+          - "10.9.9.9/24"
         routes:
           - network: "0.0.0.0/0"
             gateway: "10.9.1.1"
