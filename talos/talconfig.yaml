@@ -37,25 +37,6 @@ nodes:
         mtu: 1500
         vip:
           ip: "10.9.1.250"
-  - hostname: "genie-1-1"
-    ipAddress: "10.9.1.51"
-    installDisk: "/dev/nvme0n1"
-    machineSpec:
-      secureboot: false
-    talosImageURL: factory.talos.dev/installer/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba
-    controlPlane: true
-    networkInterfaces:
-      - deviceSelector:
-          hardwareAddr: "48:21:0b:6f:de:3a"
-        dhcp: false
-        addresses:
-          - "10.9.1.51/24"
-        routes:
-          - network: "0.0.0.0/0"
-            gateway: "10.9.1.1"
-        mtu: 1500
-        vip:
-          ip: "10.9.1.250"
 
 # Global patches
 patches:
