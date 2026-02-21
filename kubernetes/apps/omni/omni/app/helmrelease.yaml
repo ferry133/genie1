@@ -94,9 +94,9 @@ spec:
           # -- Enabled controls whether the Auth0 authentication provider is enabled.
           enabled: true
           # -- ClientID is the Auth0 client ID.
-          clientID: "v9Izvzz2Oc5IzWlAKDUteYrrD1whl3zH"
+          clientID: "y8SZnlMtSfQ5HnDHKkR1kdGG6nTeXnem"
           # -- Domain is the Auth0 domain.
-          domain: "dev-iuun0sorsooqrtcg.us.auth0.com"
+          domain: "dev-s6klrnbd0umevgxf.us.auth0.com"
           # UseFormData controls whether the Auth0 provider should use form data for authentication requests.
           #useFormData: false
         # -- InitialServiceAccount contains configuration for the initial service account created when Omni is run for the first time.
