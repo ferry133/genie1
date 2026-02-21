@@ -92,7 +92,7 @@ spec:
         # Auth0 contains Auth0 authentication provider configuration.
         auth0:
           # -- Enabled controls whether the Auth0 authentication provider is enabled.
-          enabled: false
+          enabled: true
           # -- ClientID is the Auth0 client ID.
           clientID: "v9Izvzz2Oc5IzWlAKDUteYrrD1whl3zH"
           # -- Domain is the Auth0 domain.
