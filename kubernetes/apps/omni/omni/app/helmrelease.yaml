@@ -252,10 +252,13 @@ spec:
       # -- Registries contains container image registries configuration.
       registries:
         # Talos is the Talos installer registry configuration.
+        talos: ghcr.io/siderolabs/installer
         #talos: ghcr.io/siderolabs/installer
         # Kubernetes is the Kubernetes container registry configuration.
+        kubernetes: ghcr.io/siderolabs/kubelet
         #kubernetes: ghcr.io/siderolabs/kubelet
         # ImageFactoryBaseURL is the base URL of the Image Factory service.
+        imageFactoryBaseURL: https://factory.talos.dev
         #imageFactoryBaseURL: https://factory.talos.dev
         # ImageFactoryPXEBaseURL is the base URL of the Image Factory PXE endpoint.
         #imageFactoryPXEBaseURL: ""
