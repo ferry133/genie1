@@ -6,4 +6,5 @@ resources:
 #  - ./ocirepository.yaml
   - ./helmrepository.yaml
   - ./helmrelease.yaml
+  - ./grpcroute.yaml
 #  - ./httproute.yaml
