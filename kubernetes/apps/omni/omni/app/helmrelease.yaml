@@ -319,7 +319,7 @@ spec:
           # -- The advertised URL for the SideroLink (Machine) API.
           # MUST be specified as a full URL, including scheme (http:// or https://).
           # It MUST match the URL of the siderolink API ingress if ingress is used.
-          advertisedURL: https://omni-link.janncot.com
+          advertisedURL: grpc://omni-link.janncot.com
         #      advertisedURL: https://siderolink.omni.example.com
         # Endpoint is the network endpoint the service listens on. It is in the form "host:port".
         #endpoint: ""
