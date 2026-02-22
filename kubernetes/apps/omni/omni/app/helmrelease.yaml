@@ -617,7 +617,7 @@ spec:
         parentRefs:
           - name: envoy-external
             namespace: network
-            sectionName: https
+            sectionName: http       # Note: many Gateway controllers do not yet support gRPC listeners, so this route is attached to the HTTP section of the gateway by default. Adjust according to your controller's capabilities.
         #- name: my-gateway
         #  namespace: my-gateway-namespace
         #  sectionName: https-listener
