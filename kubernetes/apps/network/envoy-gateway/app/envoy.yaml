@@ -59,7 +59,8 @@ spec:
       port: 80
       allowedRoutes:
         namespaces:
-          from: Same
+          from: All   # Note: Adjust this according to your security requirements. This allows any route in any namespace to attach to this listener, which is necessary for split DNS configurations but may not be appropriate for all environments.
+#          from: Same.  # Larry: for grpc support test.
     - name: https
       protocol: HTTPS
       port: 443
@@ -89,7 +90,8 @@ spec:
       port: 80
       allowedRoutes:
         namespaces:
-          from: Same
+          from: All
+#          from: Same
     - name: https
       protocol: HTTPS
       port: 443
