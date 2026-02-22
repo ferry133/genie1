@@ -562,38 +562,47 @@ spec:
       # Route for the Web UI
       ui:
         # -- Enable HTTPRoute for Web UI.
-        enabled: false
+        enabled: true
+#        enabled: false
         # -- Additional Annotations
         annotations: {}
         # -- Additional Labels
         labels: {}
         # -- The Gateway(s) to attach this route to.
         # You MUST define at least one parentRef for the route to be active.
-        parentRefs: []
+        parentRefs:
+          - name: envoy-external
+            namespace: network
+            sectionName: https
         #- name: my-gateway
         #  namespace: my-gateway-namespace
         #  sectionName: https-listener
         # -- Omni UI hostname
         hostnames:
-          - kmp.janncot.com
+          - omni.janncot.com
       #      - omni.example.com
       # Route for the Kubernetes Proxy
       kubernetesProxy:
         # -- Enable HTTPRoute for Kubernetes Proxy.
-        enabled: false
+        enabled: true
+#        enabled: false
         # -- Additional Annotations
         annotations: {}
         # -- Additional Labels
         labels: {}
         # -- The Gateway(s) to attach this route to.
         # You MUST define at least one parentRef for the route to be active.
-        parentRefs: []
+        parentRefs:
+          - name: envoy-external
+            namespace: network
+            sectionName: https
         #- name: my-gateway
         #  namespace: my-gateway-namespace
         #  sectionName: https-listener
         # -- Omni Kubernetes Proxy hostname
         hostnames:
-          - kubernetes.omni.example.com
+          - omni-k8s.janncot.com
+#          - kubernetes.omni.example.com
       # Route for the SideroLink Machine API
       siderolinkApi:
         # -- Enable GRPCRoute for SideroLink Machine API.
@@ -627,7 +636,7 @@ spec:
         path: /healthz
         port: omni
         scheme: HTTP
-      periodSeconds: 600
+      periodSeconds: 60
 #      periodSeconds: 5
       successThreshold: 1
       timeoutSeconds: 3
