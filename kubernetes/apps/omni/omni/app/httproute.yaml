@@ -23,9 +23,9 @@ spec:
 #apiVersion: gateway.networking.k8s.io/v1
 #kind: GRPCRoute
 #metadata:
-#  name: omni-link
+#  name: omni-siderolink
 #spec:
-#  hostnames: ["omni-link.${SECRET_DOMAIN}"]
+#  hostnames: ["omni-siderolink.${SECRET_DOMAIN}"]
 #  parentRefs:
 #    - name: envoy-external
 #      namespace: network
