@@ -597,20 +597,25 @@ spec:
       # Route for the SideroLink Machine API
       siderolinkApi:
         # -- Enable GRPCRoute for SideroLink Machine API.
-        enabled: false
+        enabled: true
+#        enabled: false
         # -- Additional Annotations
         annotations: {}
         # -- Additional Labels
         labels: {}
         # -- The Gateway(s) to attach this route to.
         # You MUST define at least one parentRef for the route to be active.
-        parentRefs: []
+        parentRefs:
+          - name: envoy-external
+            namespace: network
+            sectionName: https
         #- name: my-gateway
         #  namespace: my-gateway-namespace
         #  sectionName: https-listener
         # -- Omni SideroLink Machine API hostname
         hostnames:
-          - siderolink.omni.example.com
+          - omni-link.janncot.com
+#          - siderolink.omni.example.com
 
     # Probes Configuration
     # -- Liveness probe configuration.
