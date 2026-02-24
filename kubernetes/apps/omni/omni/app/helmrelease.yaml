@@ -271,7 +271,7 @@ spec:
           # -- The advertised URL for the main Omni GRPC and HTTP API and Web UI.
           # MUST be specified as a full URL, including scheme (http:// or https://).
           # It MUST match the URL of the main ingress if ingress is used.
-          advertisedURL: https://omni.janncot.com
+          advertisedURL: http://omni.janncot.com
         #      advertisedURL: https://omni.example.com
         # Endpoint is the network endpoint the service listens on. It is in the form "host:port".
         #endpoint: "0.0.0.0:8080"
