@@ -536,7 +536,8 @@ spec:
         # -- Enable ingress for SideroLink Machine API.
         enabled: true
         # -- Set to true to skip validation between this Ingress and config.services.machineAPI.advertisedURL
-        skipConfigCheck: false
+        skipConfigCheck: true
+#        skipConfigCheck: false
         # -- Additional Annotations.
         # The default annotations ensure compatibility with NGINX Ingress Controller.
         # They are ignored by other ingress controllers.
