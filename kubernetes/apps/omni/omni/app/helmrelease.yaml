@@ -503,7 +503,7 @@ spec:
         # -- Additional Labels
         labels: {}
         # -- Ingress Class Name
-        className: ""
+        className: "nginx"
         # -- Omni hostname
         host: omni.janncot.duckdns.org
         # -- TLS configuration
