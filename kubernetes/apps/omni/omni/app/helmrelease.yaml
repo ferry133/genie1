@@ -507,7 +507,10 @@ spec:
         # -- Omni hostname
         host: omni.janncot.duckdns.org
         # -- TLS configuration
-        tls: []
+        tls:
+          - secretName: janncot-duckdns-org-production-tls
+            hosts:
+              - omni.janncot.duckdns.org
         #- secretName: omni-tls
         #  hosts:
         #    - omni.example.com
@@ -547,12 +550,15 @@ spec:
         # -- Additional Labels
         labels: {}
         # -- Ingress Class Name
-        className: ""
+        className: "nginx"
         # -- Omni SideroLink Machine API hostname
         host: omni-siderolink.janncot.duckdns.org
         #    host: siderolink.omni.example.com
         # -- TLS configuration
-        tls: []
+        tls:
+          - secretName: janncot-duckdns-org-production-tls
+            hosts:
+              - omni-siderolink.janncot.duckdns.org
         #- secretName: omni-siderolink-tls
         #  hosts:
         #    - siderolink.omni.example.com

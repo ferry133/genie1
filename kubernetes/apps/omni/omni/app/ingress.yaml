@@ -1,0 +1,32 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+  name: omni-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: omni-siderolink.janncot.duckdns.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: omni
+            port:
+              number: 8090
+  tls:
+  # This secret must exist beforehand
+  # The cert must also contain the subj-name grpctest.dev.mydomain.com
+  # https://github.com/kubernetes/ingress-nginx/blob/master/docs/examples/PREREQUISITES.md#tls-certificates
+  - secretName: janncot-duckdns-org-production-tls
+    hosts:
+      - omni-siderolink.janncot.duckdns.org
+#  - secretName: wildcard.dev.mydomain.com
+#    hosts:
+#      - grpctest.dev.mydomain.com
+
