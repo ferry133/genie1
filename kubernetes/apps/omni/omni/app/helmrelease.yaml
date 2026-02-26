@@ -320,7 +320,8 @@ spec:
           # -- The advertised URL for the SideroLink (Machine) API.
           # MUST be specified as a full URL, including scheme (http:// or https://).
           # It MUST match the URL of the siderolink API ingress if ingress is used.
-          advertisedURL: grpc://omni-siderolink.janncot.com
+          advertisedURL: grpc://omni-siderolink.janncot.duckdns.org
+#          advertisedURL: grpc://omni-siderolink.janncot.com
         #      advertisedURL: https://siderolink.omni.example.com
         # Endpoint is the network endpoint the service listens on. It is in the form "host:port".
         #endpoint: ""
@@ -490,16 +491,16 @@ spec:
       # Ingress for the Web UI and gRPC API
       main:
         # -- Enable ingress for Web UI and gRPC API.
-        enabled: false
+        enabled: true
         # -- Set to true to skip validation between this Ingress and config.services.api.advertisedURL
         skipConfigCheck: true
         # -- Additional Annotations.
         # The default annotations ensure compatibility with NGINX Ingress Controller.
         # They are ignored by other ingress controllers.
         annotations:
-          nginx.ingress.kubernetes.io/backend-protocol: http
-          nginx.ingress.kubernetes.io/proxy-body-size: 32m
-          nginx.ingress.kubernetes.io/service-upstream: "true"
+#          nginx.ingress.kubernetes.io/backend-protocol: http
+#          nginx.ingress.kubernetes.io/proxy-body-size: 32m
+#          nginx.ingress.kubernetes.io/service-upstream: "true"
         # -- Additional Labels
         labels: {}
         # -- Ingress Class Name
@@ -537,7 +538,7 @@ spec:
       # Ingress for the SideroLink Machine API
       siderolinkApi:
         # -- Enable ingress for SideroLink Machine API.
-        enabled: true
+        enabled: false
         # -- Set to true to skip validation between this Ingress and config.services.machineAPI.advertisedURL
         skipConfigCheck: true
 #        skipConfigCheck: false
