@@ -527,7 +527,7 @@ spec:
         # -- Additional Labels
         labels: {}
         # -- Ingress Class Name
-        className: ""
+        className: "nginx"
         # -- Omni Kubernetes Proxy hostname
         host: omni-k8s.janncot.duckdns.org
         #    host: kubernetes.omni.example.com
