@@ -490,14 +490,14 @@ spec:
       # Ingress for the Web UI and gRPC API
       main:
         # -- Enable ingress for Web UI and gRPC API.
-        enabled: true
+        enabled: false
         # -- Set to true to skip validation between this Ingress and config.services.api.advertisedURL
         skipConfigCheck: true
         # -- Additional Annotations.
         # The default annotations ensure compatibility with NGINX Ingress Controller.
         # They are ignored by other ingress controllers.
         annotations:
-          nginx.ingress.kubernetes.io/backend-protocol: GRPC
+          nginx.ingress.kubernetes.io/backend-protocol: http
           nginx.ingress.kubernetes.io/proxy-body-size: 32m
           nginx.ingress.kubernetes.io/service-upstream: "true"
         # -- Additional Labels
