@@ -321,7 +321,7 @@ spec:
           # -- The advertised URL for the SideroLink (Machine) API.
           # MUST be specified as a full URL, including scheme (http:// or https://).
           # It MUST match the URL of the siderolink API ingress if ingress is used.
-          advertisedURL: grpc://omni-siderolink.janncot.duckdns.org
+          advertisedURL: https://omni-siderolink.janncot.duckdns.org
 #          advertisedURL: grpc://omni-siderolink.janncot.com
         #      advertisedURL: https://siderolink.omni.example.com
         # Endpoint is the network endpoint the service listens on. It is in the form "host:port".
@@ -494,7 +494,7 @@ spec:
         # -- Enable ingress for Web UI and gRPC API.
         enabled: true
         # -- Set to true to skip validation between this Ingress and config.services.api.advertisedURL
-        skipConfigCheck: true
+        skipConfigCheck: false
         # -- Additional Annotations.
         # The default annotations ensure compatibility with NGINX Ingress Controller.
         # They are ignored by other ingress controllers.
@@ -519,7 +519,7 @@ spec:
       # Ingress for the Kubernetes Proxy
       kubernetesProxy:
         # -- Enable ingress for Kubernetes Proxy.
-        enabled: false
+        enabled: true
         # -- Set to true to skip validation between this Ingress and config.services.kubernetesProxy.advertisedURL
         skipConfigCheck: false
         # -- Additional Annotations
@@ -529,26 +529,28 @@ spec:
         # -- Ingress Class Name
         className: ""
         # -- Omni Kubernetes Proxy hostname
-        host: kubernetes-kmp.janncot.com
+        host: omni-k8s.janncot.duckdns.org
         #    host: kubernetes.omni.example.com
         # -- TLS configuration
-        tls: []
+        tls:
+          - secretName: janncot-duckdns-org-production-tls
+            hosts:
+              - omni-k8s.janncot.duckdns.org
         #- secretName: omni-k8s-proxy-tls
         #  hosts:
         #    - kubernetes.omni.example.com
       # Ingress for the SideroLink Machine API
       siderolinkApi:
         # -- Enable ingress for SideroLink Machine API.
-        enabled: false
+        enabled: true
         # -- Set to true to skip validation between this Ingress and config.services.machineAPI.advertisedURL
-        skipConfigCheck: true
-#        skipConfigCheck: false
+        skipConfigCheck: false
         # -- Additional Annotations.
         # The default annotations ensure compatibility with NGINX Ingress Controller.
         # They are ignored by other ingress controllers.
         annotations:
-          nginx.ingress.kubernetes.io/backend-protocol: GRPC
-          nginx.ingress.kubernetes.io/proxy-body-size: 100m
+#          nginx.ingress.kubernetes.io/backend-protocol: GRPC
+#          nginx.ingress.kubernetes.io/proxy-body-size: 100m
         # -- Additional Labels
         labels: {}
         # -- Ingress Class Name
