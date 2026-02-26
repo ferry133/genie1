@@ -94,7 +94,8 @@ spec:
           # -- Enabled controls whether the Auth0 authentication provider is enabled.
           enabled: true
           # -- ClientID is the Auth0 client ID.
-          clientID: "y8SZnlMtSfQ5HnDHKkR1kdGG6nTeXnem"
+          clientID: "7nwdMFnIvPwdT7MNACAuoCkuC7rCaknb"   # janncot.duckdns.org
+#          clientID: "y8SZnlMtSfQ5HnDHKkR1kdGG6nTeXnem"   # janncot.com
           # -- Domain is the Auth0 domain.
           domain: "dev-s6klrnbd0umevgxf.us.auth0.com"
           # UseFormData controls whether the Auth0 provider should use form data for authentication requests.
