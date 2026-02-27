@@ -5,6 +5,8 @@ metadata:
   annotations:
 #    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 #    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    # add an annotation indicating the issuer to use.
+    cert-manager.io/cluster-issuer: cert-manager-webhook-duckdns-production
   name: omni-ing
 spec:
   ingressClassName: nginx
@@ -37,6 +39,8 @@ metadata:
   annotations:
 #    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 #    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    # add an annotation indicating the issuer to use.
+    cert-manager.io/cluster-issuer: cert-manager-webhook-duckdns-production
   name: omni-k8s-ing
 spec:
   ingressClassName: nginx
@@ -69,7 +73,9 @@ metadata:
   annotations:
 #    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 #    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
-  name: omni-ingress
+    # add an annotation indicating the issuer to use.
+    cert-manager.io/cluster-issuer: cert-manager-webhook-duckdns-production
+  name: omni-siderolink-ing
 spec:
   ingressClassName: nginx
   rules:
