@@ -492,7 +492,7 @@ spec:
       # Ingress for the Web UI and gRPC API
       main:
         # -- Enable ingress for Web UI and gRPC API.
-        enabled: true
+        enabled: false
         # -- Set to true to skip validation between this Ingress and config.services.api.advertisedURL
         skipConfigCheck: false
         # -- Additional Annotations.
@@ -519,7 +519,7 @@ spec:
       # Ingress for the Kubernetes Proxy
       kubernetesProxy:
         # -- Enable ingress for Kubernetes Proxy.
-        enabled: true
+        enabled: false
         # -- Set to true to skip validation between this Ingress and config.services.kubernetesProxy.advertisedURL
         skipConfigCheck: false
         # -- Additional Annotations
@@ -542,7 +542,7 @@ spec:
       # Ingress for the SideroLink Machine API
       siderolinkApi:
         # -- Enable ingress for SideroLink Machine API.
-        enabled: true
+        enabled: false
         # -- Set to true to skip validation between this Ingress and config.services.machineAPI.advertisedURL
         skipConfigCheck: false
         # -- Additional Annotations.
@@ -574,7 +574,7 @@ spec:
       # Route for the Web UI
       ui:
         # -- Enable HTTPRoute for Web UI.
-        enabled: true
+        enabled: false
 #        enabled: false
         # -- Additional Annotations
         annotations: {}
@@ -596,7 +596,7 @@ spec:
       # Route for the Kubernetes Proxy
       kubernetesProxy:
         # -- Enable HTTPRoute for Kubernetes Proxy.
-        enabled: true
+        enabled: false
 #        enabled: false
         # -- Additional Annotations
         annotations: {}
