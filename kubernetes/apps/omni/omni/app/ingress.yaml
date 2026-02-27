@@ -25,7 +25,7 @@ spec:
   # This secret must exist beforehand
   # The cert must also contain the subj-name grpctest.dev.mydomain.com
   # https://github.com/kubernetes/ingress-nginx/blob/master/docs/examples/PREREQUISITES.md#tls-certificates
-  - secretName: janncot-duckdns-org-production-tls
+  - secretName: janncot-duckdns-org-production
     hosts:
       - omni.janncot.duckdns.org
 #  - secretName: wildcard.dev.mydomain.com
@@ -59,7 +59,7 @@ spec:
   # This secret must exist beforehand
   # The cert must also contain the subj-name grpctest.dev.mydomain.com
   # https://github.com/kubernetes/ingress-nginx/blob/master/docs/examples/PREREQUISITES.md#tls-certificates
-  - secretName: janncot-duckdns-org-production-tls
+  - secretName: janncot-duckdns-org-production
     hosts:
       - omni-k8s.janncot.duckdns.org
 #  - secretName: wildcard.dev.mydomain.com
@@ -93,7 +93,7 @@ spec:
   # This secret must exist beforehand
   # The cert must also contain the subj-name grpctest.dev.mydomain.com
   # https://github.com/kubernetes/ingress-nginx/blob/master/docs/examples/PREREQUISITES.md#tls-certificates
-  - secretName: janncot-duckdns-org-production-tls
+  - secretName: janncot-duckdns-org-production
     hosts:
       - omni-siderolink.janncot.duckdns.org
 #  - secretName: wildcard.dev.mydomain.com
