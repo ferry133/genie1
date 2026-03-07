@@ -1,5 +1,6 @@
 cp ./config.gen/cluster.yaml .
 cp ./config.gen/nodes.yaml .
+cp ./config.gen/cloudflare-tunnel.json .
 
 #mkdir $PWD/talos/clusterconfig
 #cp ./config.gen/*kubeconfig.yaml $KUBECONFIG
