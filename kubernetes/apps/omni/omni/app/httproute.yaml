@@ -23,6 +23,27 @@ spec:
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
+  name: omni-siderolink
+spec:
+  hostnames: ["omni-siderolink.${SECRET_DOMAIN}"]
+  parentRefs:
+    - name: envoy-external
+      namespace: network
+      sectionName: http
+  rules:
+    - backendRefs:
+        - name: omni
+          namespace: omni
+          port: 8090
+      matches:
+        - path:
+            type: PathPrefix
+            value: /
+
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
   name: omni-k8s
 spec:
   hostnames: ["omni-k8s.${SECRET_DOMAIN}"]
