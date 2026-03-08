@@ -322,8 +322,8 @@ spec:
           # -- The advertised URL for the SideroLink (Machine) API.
           # MUST be specified as a full URL, including scheme (http:// or https://).
           # It MUST match the URL of the siderolink API ingress if ingress is used.
-#          advertisedURL: https://omni-siderolink.janncot.duckdns.org
-          advertisedURL: https://omni-siderolink.janncot.com
+          advertisedURL: https://omni-siderolink.janncot.duckdns.org
+#          advertisedURL: https://omni-siderolink.janncot.com
 #          advertisedURL: grpc://omni-siderolink.janncot.com
         #      advertisedURL: https://siderolink.omni.example.com
         # Endpoint is the network endpoint the service listens on. It is in the form "host:port".
@@ -620,7 +620,7 @@ spec:
       # Route for the SideroLink Machine API
       siderolinkApi:
         # -- Enable GRPCRoute for SideroLink Machine API.
-        enabled: true
+        enabled: false
 #        enabled: false
         # -- Additional Annotations
         annotations: {}
