@@ -576,7 +576,7 @@ spec:
       # Route for the Web UI
       ui:
         # -- Enable HTTPRoute for Web UI.
-        enabled: false
+        enabled: true
 #        enabled: false
         # -- Additional Annotations
         annotations: {}
@@ -598,7 +598,7 @@ spec:
       # Route for the Kubernetes Proxy
       kubernetesProxy:
         # -- Enable HTTPRoute for Kubernetes Proxy.
-        enabled: false
+        enabled: true
 #        enabled: false
         # -- Additional Annotations
         annotations: {}
@@ -620,7 +620,7 @@ spec:
       # Route for the SideroLink Machine API
       siderolinkApi:
         # -- Enable GRPCRoute for SideroLink Machine API.
-        enabled: false
+        enabled: true
 #        enabled: false
         # -- Additional Annotations
         annotations: {}
