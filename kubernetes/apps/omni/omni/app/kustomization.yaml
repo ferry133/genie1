@@ -8,10 +8,10 @@ resources:
   - ./helmrelease.yaml
   - ./certificate.yaml
   - ./ingress.yaml
-
-
 #  - ./grpcroute.yaml
-#  - ./httproute.yaml
+  - ./httproute.yaml
+
+
 ##############################
 # 20260308 Larry: Go ingress solution. Give up the omni-siderolink on cloudflare tunnel, because of the following limitations:
 #

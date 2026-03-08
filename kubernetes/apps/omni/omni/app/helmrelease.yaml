@@ -576,7 +576,7 @@ spec:
       # Route for the Web UI
       ui:
         # -- Enable HTTPRoute for Web UI.
-        enabled: true
+        enabled: false
 #        enabled: false
         # -- Additional Annotations
         annotations: {}
@@ -598,7 +598,7 @@ spec:
       # Route for the Kubernetes Proxy
       kubernetesProxy:
         # -- Enable HTTPRoute for Kubernetes Proxy.
-        enabled: true
+        enabled: false
 #        enabled: false
         # -- Additional Annotations
         annotations: {}
